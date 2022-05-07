@@ -3,7 +3,7 @@ import java.util.Random;
 
 
 public class Randoms implements Iterable<Integer> {
-    protected Random random;
+    protected Random random = new Random();
     protected int min;
     protected int max;
 
@@ -22,7 +22,6 @@ public class Randoms implements Iterable<Integer> {
 
         @Override
         public Integer next() {
-            random = new Random();
             return random.nextInt(min, max);
         }
     }
