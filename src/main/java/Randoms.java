@@ -12,25 +12,18 @@ public class Randoms implements Iterable<Integer> {
         this.max = max;
     }
 
-    public class IteratorImpl implements Iterator<Integer>{
+    public class IteratorImpl implements Iterator<Integer> {
         protected int counter = min;
 
         @Override
-        public boolean hasNext(){
+        public boolean hasNext() {
             return counter < max;
         }
 
         @Override
-        public Integer next(){
+        public Integer next() {
             random = new Random();
-            while(true){
-                int counterNext = random.nextInt(min,max);
-                if(counterNext > counter){
-                    counter = counterNext;
-                    break;
-                }
-            }
-            return counter;
+            return random.nextInt(min, max);
         }
     }
 
